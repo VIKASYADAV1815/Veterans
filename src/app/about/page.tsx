@@ -144,24 +144,30 @@ export default function About() {
       </section>
 
       {/* --- CORE VALUES (Subtle & Professional) --- */}
-      <section className="py-16 md:py-24 bg-[#1a1a1a] rounded-3xl md:rounded-[4rem] mx-4 mb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div className="lg:col-span-2">
+      <section className="py-16 md:py-24 bg-[#1a1a1a] rounded-3xl md:rounded-[4rem] mx-4 mb-12 relative overflow-hidden">
+        {/* Background grid pattern */}
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+             style={{ backgroundImage: `radial-gradient(#8B6A2E 0.5px, transparent 0.5px)`, backgroundSize: '24px 24px' }} 
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16">
+            <div className="lg:col-span-4">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tighter mb-6">Our Fundamental <br className="hidden md:block" />Tenets.</h2>
-              <p className="text-white/40 text-xs md:text-sm max-w-sm">Governing every interaction, from administration to bedside care.</p>
+              <p className="text-white/40 text-xs md:text-sm max-w-sm leading-relaxed">Governing every interaction, from administration to bedside care. These principles are the bedrock of our commitment to veteran well-being.</p>
             </div>
-            {[
-              { t: "Integrity", d: "Upholding the standard of the uniform." },
-              { t: "Excellence", d: "Continuous clinical improvement." },
-              { t: "Camaraderie", d: "Fostering veteran-to-veteran bonds." },
-              { t: "Dignity", d: "Respecting the individual's legacy." }
-            ].map((v, i) => (
-              <div key={i} className="space-y-3 md:space-y-4">
-              <h5 className="text-[#8B6A2E] text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]">{v.t}</h5>
-                <p className="text-white/60 text-[10px] md:text-xs font-medium leading-relaxed">{v.d}</p>
-              </div>
-            ))}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+              {[
+                { t: "Integrity", d: "Upholding the standard of the uniform, we operate with unwavering honesty and transparency in all our services and interactions. Our word is our bond." },
+                { t: "Excellence", d: "Through continuous clinical improvement and a relentless pursuit of best practices, we ensure the highest quality of care and support for every veteran." },
+                { t: "Camaraderie", d: "Fostering veteran-to-veteran bonds is paramount. We cultivate a supportive community where shared experiences build strength and mutual respect." },
+                { t: "Dignity", d: "Respecting the individual's legacy, we provide care that honors their service and preserves their self-worth, ensuring comfort and respect at every turn." }
+              ].map((v, i) => (
+                <div key={i} className="space-y-3 md:space-y-4">
+                <h5 className="text-[#8B6A2E] text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]">{v.t}</h5>
+                  <p className="text-white/60 text-[10px] md:text-xs font-medium leading-relaxed">{v.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
