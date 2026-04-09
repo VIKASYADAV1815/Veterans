@@ -123,10 +123,10 @@ export default function About() {
             {/* Column 3: The Call to Action */}
             <div className="relative group overflow-hidden border border-[#1a1a1a]/10 p-8 md:p-10 rounded-2xl md:rounded-[2.5rem] flex flex-col justify-between items-start min-h-[300px] md:col-span-2 lg:col-span-1">
               <Image 
-                src="https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1682464311258-495f156eb09b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Admissions"
                 fill
-                className="object-cover opacity-20 group-hover:scale-110 transition-transform duration-700"
+                className="object-cover opacity-10 transition-transform duration-700"
               />
               <div className="relative z-10 w-full h-full flex flex-col justify-between items-start">
                 <Scale className="text-[#8B6A2E] mb-6" />
