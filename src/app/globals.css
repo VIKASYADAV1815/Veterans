@@ -2,25 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply font-sans antialiased text-secondary bg-background selection:bg-accent selection:text-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-primary;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(17, 24, 39, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(17, 24, 39, 0.03) 1px, transparent 1px);
+    background-position: top center;
+  }
+
+  /* Refined, much lighter glassmorphism */
+  .glass {
+    @apply bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_2px_8px_rgba(0,0,0,0.02)];
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/40 hover:border-white/60 hover:shadow-[0_8px_16px_rgba(0,0,0,0.04)] transition-all duration-300;
+  }
+
+  /* Frosted panels for cards */
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/50 shadow-[0_4px_24px_rgba(0,0,0,0.03)];
+  }
+
+  /* Very subtle, almost invisible glass */
+  .glass-subtle {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  /* Replaced dark glass with a lighter semi-dark variant */
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)];
+  }
+
   .text-balance {
     text-wrap: balance;
   }
